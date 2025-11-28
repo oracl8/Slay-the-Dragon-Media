@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knight Adventure - Slay the Dragon Lord</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="ui-overlay">
+            <div id="health-bar">
+                <div class="bar-label">HP</div>
+                <div class="bar-container">
+                    <div id="health-fill" class="bar-fill"></div>
+                </div>
+                <span id="health-text">100/100</span>
+            </div>
+            <div id="stats">
+                <div>Room: <span id="current-room">Starting Chamber</span></div>
+                <div>Coins: <span id="coin-count">0</span></div>
+                <div>Potions: <span id="potion-count">0</span></div>
+            </div>
+            <div id="controls-hint">
+                <p><strong>Controls:</strong></p>
+                <p>WASD / Arrow Keys - Move</p>
+                <p>SPACE - Attack</p>
+                <p>SHIFT - Run</p>
+                <p>E - Interact / Use Potion</p>
+                <p>D - Defend</p>
+            </div>
+            <div id="interaction-prompt" style="display: none;"></div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div id="game-over" style="display: none;">
+            <h1 id="game-over-title">Game Over</h1>
+            <p id="game-over-message"></p>
+            <button id="restart-button">Restart Game</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
