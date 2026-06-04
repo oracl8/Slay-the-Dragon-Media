@@ -3,15 +3,8 @@ from cmu_graphics import *
 Github: https://githubcom/oracl8/Slay-the-Dragon-Media
 
 Note:
-I spent a really long time working with the sprites. They were a big pain. I had to learn how to download sprite sheets, unzip rar and zip files, 
+I spent a long time working with the sprites. I had to learn how to download sprite sheets, unzip rar and zip files, 
 work with github in terms of uploading the correct size and ammount of files, slicing sprites, reversing sprites, and looping through sprites.
-
-Citations:
-
-Mr. Taylor helped a lot in figuring out how to slice and loop through frames.
-I also used the help of ai in a couple parts of my code. Citations are comments on the side. To be clear I did the vast majority of thinking coding and outlining on my own. 
-All parts of the app came from me. However, when attempting to make a difficult game such as this there were simply some parts I didn't entirely understand. 
-In some cases I was missing a line or two and in others I just had small logic bugs. I didn't write this in the final sumbission so I thought i'd leave it here.
 
 Overview:
 
@@ -21,8 +14,8 @@ Features to grade:
 
 Animation System:
 Use of sprites
-Knight has 7 animation states: idle,walk,attack1,attack2,death, hurt and jump
-Dragon has 5 animation states: idle,walk,attack,hurt and death
+Knight has 7 animation states: idle, walk, attack1, attack2, death, hurt and jump
+Dragon has 5 animation states: idle, walk, attack, hurt and death
 All animations have smooth frame cycling as well as good state transitions
 
 Rooms:
@@ -42,17 +35,17 @@ Collection animation on pickup
 Coin counter display
 
 Shop system - 'inside' room:
-WHhen in left 2 and near shop press e to enter
+When in left 2 and near shop press e to enter
 4 upgrades 10 coins each - clear what they do
 use arrow keys to nagivate and enter to purchase
-THere is visual feedback for all the above
+There is visual feedback for all the above
 Cant move when in shop
 
 Boss fight:
 Cutscene
 Dragon walks back and forth and attacks every 4 seconds whne facing the player
-HEalth bars displayed
-INvulnerability of knight after you take damage
+Health bars displayed
+Invulnerability of knight after you take damage
 Victory screen - cant move and sick animation of dragon death
 
 Combat:
@@ -77,8 +70,7 @@ press '4' to go to boss with all upgrades - 5 hp, 2x damage, faster attack speed
 
 
 """
-#yt vid with commentary
-#final submission form
+
 
 def onAppStart(app):
     
@@ -234,7 +226,7 @@ def onStep(app):
         elif app.knightState == 'jump':
             app.knightFrame = (app.knightFrame % app.knightJumpFrames) + 1
         elif app.knightState == 'attack1':
-            app.knightFrame = (app.knightFrame % app.knightAttack1Frames) + 1               # Used information from Mr. Taylor plus a bit of ai debugging
+            app.knightFrame = (app.knightFrame % app.knightAttack1Frames) + 1              
         elif app.knightState == 'attack2':
             app.knightFrame = (app.knightFrame % app.knightAttack2Frames) + 1
         elif app.knightState == 'hurt':
@@ -294,7 +286,7 @@ def onStep(app):
     coinsToRemove = []
     for coin in app.coins[app.currentRoom]:
         cx,cy = coin
-        if distance(app.knightX,app.knightY,cx,cy) < 30:                #used the help of ai to figure out how to do coin collection
+        if distance(app.knightX,app.knightY,cx,cy) < 30:                
             app.collectedCoins.append([cx,cy,app.currentRoom,9])
             coinsToRemove.append(coin)
             app.coinsCollected +=1
@@ -326,7 +318,7 @@ def onStep(app):
     if app.knightAttacking and not app.knightHasHitAttack:
         if app.currentRoom == 'top':
             if app.knightFacingRight:
-                attackX = app.knightX + 40                                          #used the help of ai for fixing knight invunerabiltiy bugs and attack mechanics bugs
+                attackX = app.knightX + 40                                          
             else:
                 attackX = app.knightX - 40
             if distance(attackX,app.knightY,app.dragonX,app.dragonY) < 80:
@@ -662,7 +654,7 @@ def onKeyPress(app,key):
         elif key == 'enter':
             itemKey = app.shopItemsList[app.shopSelectedItem]
             item = app.shopItems[itemKey]
-            if not item['purchased']:                                   #Slight ai debugging
+            if not item['purchased']:                                   
                 if app.coinsCollected >= item['cost']:
                     app.coinsCollected -= item['cost']
                     item['purchased'] = True
@@ -765,7 +757,7 @@ def redrawAll(app):
             if app.dragonShowingHurt:
                 dragonUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/dragon_hurt_{app.dragonFrame:02d}.png'
             elif app.dragonState == 'idle':
-                dragonUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/dragon_idle_{app.dragonFrame:02d}.png'                # Used information from Mr. Taylor
+                dragonUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/dragon_idle_{app.dragonFrame:02d}.png'                
             elif app.dragonState == 'attack':
                 dragonUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/dragon_attack_{app.dragonFrame:02d}.png'
             elif app.dragonState == 'death':
@@ -803,7 +795,7 @@ def redrawAll(app):
             knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_walk_{app.knightFrame:02d}.png' 
     else:
         if app.knightState == 'idle':
-            knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_idle_left_{app.knightFrame:02d}.png'           # Used information from Mr. Taylor
+            knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_idle_left_{app.knightFrame:02d}.png'           
         elif app.knightState == 'jump':
             knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_jump_left_{app.knightFrame:02d}.png'
         elif app.knightState == 'attack2':
@@ -842,7 +834,7 @@ def drawRoomBackground(app):
     elif app.currentRoom == 'bottom':
         drawImage('https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/low.png',0,0,width = 700,height = 700)
     elif app.currentRoom == 'left1':
-        drawImage('https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/left1.png',0,0,width = 700,height = 700)                 # Used information from Mr. Taylor
+        drawImage('https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/left1.png',0,0,width = 700,height = 700)                 
     elif app.currentRoom == 'left2':
         drawImage('https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/left2.png',0,0,width = 700,height = 700)
     elif app.currentRoom == 'inside':
