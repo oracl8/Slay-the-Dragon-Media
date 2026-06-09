@@ -1,6 +1,6 @@
 from cmu_graphics import *
 """
-Github: https://githubcom/oracl8/Slay-the-Dragon-Media
+Github: https://githubcom/oracl8/SlayTheDragon
 
 Note:
 I spent a long time working with the sprites. I had to learn how to download sprite sheets, unzip rar and zip files, 
@@ -738,12 +738,12 @@ def redrawAll(app):
             
     for coin in app.coins[app.currentRoom]:
         cx,cy = coin
-        coinUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/coin_collect_{app.coinFrame:02d}.png'
+        coinUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/coin_collect_{app.coinFrame:02d}.png'
         drawImage(coinUrl,cx,cy,align = 'center',width = 30,height = 30)
     for collected in app.collectedCoins:
         if collected[2] == app.currentRoom:
             cx,cy,room,frame  = collected
-            coinUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/coin_collect_{frame:02d}.png'
+            coinUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/coin_collect_{frame:02d}.png'
             drawImage(coinUrl,cx,cy,align = 'center',width = 30,height = 30)
             
             
@@ -755,26 +755,26 @@ def redrawAll(app):
     if app.currentRoom == 'top':
         if app.dragonFacingRight:
             if app.dragonShowingHurt:
-                dragonUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/dragon_hurt_{app.dragonFrame:02d}.png'
+                dragonUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/dragon_hurt_{app.dragonFrame:02d}.png'
             elif app.dragonState == 'idle':
-                dragonUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/dragon_idle_{app.dragonFrame:02d}.png'                
+                dragonUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/dragon_idle_{app.dragonFrame:02d}.png'                
             elif app.dragonState == 'attack':
-                dragonUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/dragon_attack_{app.dragonFrame:02d}.png'
+                dragonUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/dragon_attack_{app.dragonFrame:02d}.png'
             elif app.dragonState == 'death':
-                dragonUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/dragon_death_{app.dragonFrame:02d}.png'# 02d so that frames start like 01 02 03 etc.
+                dragonUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/dragon_death_{app.dragonFrame:02d}.png'# 02d so that frames start like 01 02 03 etc.
             else:
-                dragonUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/dragon_walk_{app.dragonFrame:02d}.png'
+                dragonUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/dragon_walk_{app.dragonFrame:02d}.png'
         else:
             if app.dragonShowingHurt:
-                dragonUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/dragon_hurt_left_{app.dragonFrame:02d}.png'
+                dragonUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/dragon_hurt_left_{app.dragonFrame:02d}.png'
             elif app.dragonState == 'idle':
-                dragonUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/dragon_idle_left_{app.dragonFrame:02d}.png'
+                dragonUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/dragon_idle_left_{app.dragonFrame:02d}.png'
             elif app.dragonState == 'attack':
-                dragonUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/dragon_attack_left_{app.dragonFrame:02d}.png'
+                dragonUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/dragon_attack_left_{app.dragonFrame:02d}.png'
             elif app.dragonState == 'death':
-                dragonUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/dragon_death_left_{app.dragonFrame:02d}.png'
+                dragonUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/dragon_death_left_{app.dragonFrame:02d}.png'
             else:
-                dragonUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/dragon_walk_left_{app.dragonFrame:02d}.png'
+                dragonUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/dragon_walk_left_{app.dragonFrame:02d}.png'
         
         drawImage(dragonUrl,app.dragonX,app.dragonY,align = 'center', width = 200, height = 200)
             
@@ -782,30 +782,30 @@ def redrawAll(app):
             drawLabel('YOU DARE CHALLENGE ME?', 350, 100, size = 16, fill = 'red')
     if app.knightFacingRight:
         if app.knightState == 'idle':
-            knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_idle_{app.knightFrame:02d}.png'
+            knightUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/knight_idle_{app.knightFrame:02d}.png'
         elif app.knightState == 'jump':
-            knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_jump_{app.knightFrame:02d}.png'
+            knightUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/knight_jump_{app.knightFrame:02d}.png'
         elif app.knightState == 'attack2':
-            knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_attack2_{app.knightFrame:02d}.png'
+            knightUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/knight_attack2_{app.knightFrame:02d}.png'
         elif app.knightState == 'attack1':
-            knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_attack1_{app.knightFrame:02d}.png'
+            knightUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/knight_attack1_{app.knightFrame:02d}.png'
         elif app.knightState == 'hurt':
-            knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_hurt_{app.knightFrame:02d}.png'
+            knightUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/knight_hurt_{app.knightFrame:02d}.png'
         else:
-            knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_walk_{app.knightFrame:02d}.png' 
+            knightUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/knight_walk_{app.knightFrame:02d}.png' 
     else:
         if app.knightState == 'idle':
-            knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_idle_left_{app.knightFrame:02d}.png'           
+            knightUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/knight_idle_left_{app.knightFrame:02d}.png'           
         elif app.knightState == 'jump':
-            knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_jump_left_{app.knightFrame:02d}.png'
+            knightUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/knight_jump_left_{app.knightFrame:02d}.png'
         elif app.knightState == 'attack2':
-            knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_attack2_left_{app.knightFrame:02d}.png'
+            knightUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/knight_attack2_left_{app.knightFrame:02d}.png'
         elif app.knightState == 'attack1':
-            knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_attack1_left_{app.knightFrame:02d}.png'
+            knightUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/knight_attack1_left_{app.knightFrame:02d}.png'
         elif app.knightState == 'hurt':
-            knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_hurt_left_{app.knightFrame:02d}.png'
+            knightUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/knight_hurt_left_{app.knightFrame:02d}.png'
         else:
-            knightUrl = f'https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/knight_walk_left_{app.knightFrame:02d}.png'
+            knightUrl = f'https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/knight_walk_left_{app.knightFrame:02d}.png'
     
     drawImage(knightUrl, app.knightX,app.knightY, align = 'center', width = 100, height = 100)
     
@@ -828,23 +828,23 @@ def redrawAll(app):
     
 def drawRoomBackground(app):
     if app.currentRoom == 'center':
-        drawImage('https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/center.png',0,0,width = 700,height = 700)
+        drawImage('https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/center.png',0,0,width = 700,height = 700)
     elif app.currentRoom == 'top':
-        drawImage('https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/top.png',0,0,width = 700,height = 700)
+        drawImage('https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/top.png',0,0,width = 700,height = 700)
     elif app.currentRoom == 'bottom':
-        drawImage('https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/low.png',0,0,width = 700,height = 700)
+        drawImage('https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/low.png',0,0,width = 700,height = 700)
     elif app.currentRoom == 'left1':
-        drawImage('https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/left1.png',0,0,width = 700,height = 700)                 
+        drawImage('https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/left1.png',0,0,width = 700,height = 700)                 
     elif app.currentRoom == 'left2':
-        drawImage('https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/left2.png',0,0,width = 700,height = 700)
+        drawImage('https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/left2.png',0,0,width = 700,height = 700)
     elif app.currentRoom == 'inside':
-        drawImage('https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/inside.png',0,0,width = 700,height = 700)
+        drawImage('https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/inside.png',0,0,width = 700,height = 700)
     elif app.currentRoom == 'right1':
-        drawImage('https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/right1.png',0,0,width = 700,height = 700)
+        drawImage('https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/right1.png',0,0,width = 700,height = 700)
     elif app.currentRoom == 'right2':
-        drawImage('https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/right2.png',0,0,width = 700,height = 700)
+        drawImage('https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/right2.png',0,0,width = 700,height = 700)
     elif app.currentRoom == 'right3':
-        drawImage('https://raw.githubusercontent.com/oracl8/Slay-the-Dragon-Media/main/right3.png',0,0,width = 700,height = 700)
+        drawImage('https://raw.githubusercontent.com/oracl8/SlayTheDragon/main/right3.png',0,0,width = 700,height = 700)
 
 def main():
     runApp()
