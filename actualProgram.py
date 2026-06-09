@@ -10,7 +10,7 @@ Overview:
 
 I made a 2d platformer game where you can explore 9 connected rooms, collected coins, purchase upgrades in a shop and defeat a dragon boss.
 
-Features to grade:
+Features:
 
 Animation System:
 Use of sprites
